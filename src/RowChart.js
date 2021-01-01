@@ -3,7 +3,7 @@ import * as d3 from "d3";
 
 class RowChart extends Component {
   state = {
-    data: [12, 5, 6, 7, 5, 10],
+    data: [12, 5, 6, 7, 5, 10, 6],
     height: 300,
     width: 700,
     spaceBetweenBars: 20,
@@ -53,6 +53,21 @@ class RowChart extends Component {
       .attr("width", barWidth) // width of each bar
       .attr("height", (d, i) => 30 * d) // height of each bar (data, index)
       .attr("fill", "#39D5FF");
+
+    svg
+      .selectAll("text")
+      .data(this.state.data)
+      .enter()
+      .append("text")
+      .text((d) => d)
+      .attr(
+        "x",
+        (d, i) =>
+          this.state.spaceBetweenBars +
+          i * (barWidth + this.state.spaceBetweenBars)
+      )
+      .attr("y", (d, i) => this.state.height - 20 * d - 3)
+      .attr("fill", "white");
   };
 
   render() {
