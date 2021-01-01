@@ -18,44 +18,34 @@ class RowChart extends Component {
     this.drawChart();
   }
 
-  chartRef = React.createRef();
+  //   chartRef = React.createRef();
 
   drawChart = () => {
-    console.log("Drawing the chart...");
-    let margin = {
-        top: 20,
-        right: 30,
-        bottom: 40,
-        left: 90,
-      },
-      width = this.state.width - margin.left - margin.right,
-      height = this.state.height - margin.top - margin.bottom;
+    const data = [12, 5, 6, 7, 5, 10];
 
-    // append SVG object to body of the page
-    let svg = d3
+    const svg = d3
       .select(".rowChart")
       .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      .attr("width", 700)
+      .attr("height", 300);
 
-    let x = d3.scaleLinear().domain([0, 100]).range([0, width]);
     svg
-      .append("g")
-      .attr("transform", "translate(0," + height + ")")
-      .attr("class", "axis x")
-      .call(d3.axisBottom(x))
-      .selectAll("text")
-      .attr("transform", "translate(-10,0)rotate(-45)")
-      .style("text-anchor", "end");
+      .selectAll("rect")
+      .data(data)
+      .enter()
+      .append("rect")
+      .attr("x", (d, i) => i * 35)
+      .attr("y", 0)
+      .attr("width", 25)
+      .attr("height", (d, i) => d*10)
+      .attr("fill", "green");
   };
 
   render() {
     return (
       <div>
         <h1>RowChart Here</h1>
-        <div className="rowChart" ref={this.chartRef}></div>
+        <div className="rowChart"></div>
       </div>
     );
   }
