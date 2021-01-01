@@ -3,15 +3,10 @@ import * as d3 from "d3";
 
 class RowChart extends Component {
   state = {
-    data: [
-      { skill: "CSS", value: 80 },
-      { skill: "HTML", value: 85 },
-      { skill: "JS", value: 74 },
-    ],
-    yAxisAttribute: "Skill",
-    xAxisAttribute: "Value",
-    width: 1000,
-    height: 400,
+    data: [12, 5, 6, 7, 5, 10],
+    height: 300,
+    width: 700,
+    spaceBetweenBars: 20,
   };
 
   componentDidMount() {
@@ -19,24 +14,45 @@ class RowChart extends Component {
   }
 
   drawChart = () => {
-    const data = [12, 5, 6, 7, 5, 10];
+    let barWidth = Math.round(
+      (this.state.width -
+        this.state.spaceBetweenBars * (this.state.data.length + 1)) /
+        this.state.data.length
+    );
+
+    console.log("Bar Width", barWidth);
+    console.log(
+      "Total space between bars",
+      this.state.spaceBetweenBars * (this.state.data.length + 1)
+    );
 
     const svg = d3
       .select(".rowChart")
       .append("svg")
-      .attr("width", 700)
-      .attr("height", 300)
+      .attr("width", this.state.width)
+      .attr("height", this.state.height);
 
     svg
-      .selectAll("rect")
-      .data(data)
+      .append("rect") // create rectangle for background color
+      .attr("width", "100%")
+      .attr("height", "100%")
+      .attr("fill", "#253536");
+
+    svg
+      .selectAll(".svg")
+      .data(this.state.data)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * 65)
-      .attr("y", 0)
-      .attr("width", 50)
-      .attr("height", (d, i) => d * 20)
-      .attr("fill", "green");
+      .attr(
+        "x",
+        (d, i) =>
+          this.state.spaceBetweenBars +
+          i * (barWidth + this.state.spaceBetweenBars)
+      ) // x co-ordinate
+      .attr("y", (d, i) => this.state.height - 20 * d) // y co-ordinate
+      .attr("width", barWidth) // width of each bar
+      .attr("height", (d, i) => 30 * d) // height of each bar (data, index)
+      .attr("fill", "#39D5FF");
   };
 
   render() {
