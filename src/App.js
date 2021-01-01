@@ -1,11 +1,15 @@
-import React, {Component}from "react"
-import './App.scss';
+import React, { Component } from "react";
+import RowChart from "./RowChart";
+import "./App.scss";
 
 class App extends Component {
-  render(){
-    return(
-      <div className="mainPage">MAIN PAGE</div>
-    )
+  render() {
+    return (
+      <div className="mainPage">
+        MAIN PAGE
+        <RowChart />
+      </div>
+    );
   }
 }
 
