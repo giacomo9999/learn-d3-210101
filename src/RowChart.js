@@ -18,8 +18,6 @@ class RowChart extends Component {
     this.drawChart();
   }
 
-  //   chartRef = React.createRef();
-
   drawChart = () => {
     const data = [12, 5, 6, 7, 5, 10];
 
@@ -27,17 +25,17 @@ class RowChart extends Component {
       .select(".rowChart")
       .append("svg")
       .attr("width", 700)
-      .attr("height", 300);
+      .attr("height", 300)
 
     svg
       .selectAll("rect")
       .data(data)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * 35)
+      .attr("x", (d, i) => i * 65)
       .attr("y", 0)
-      .attr("width", 25)
-      .attr("height", (d, i) => d*10)
+      .attr("width", 50)
+      .attr("height", (d, i) => d * 20)
       .attr("fill", "green");
   };
 
