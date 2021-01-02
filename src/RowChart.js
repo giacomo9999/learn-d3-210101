@@ -55,7 +55,7 @@ class RowChart extends Component {
       .attr("fill", "#39D5FF");
 
     svg
-      .selectAll("text")
+      .selectAll("g.text")
       .data(this.state.data)
       .enter()
       .append("text")
