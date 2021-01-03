@@ -5,20 +5,38 @@ const testThing = (props) => {
   const testBox = (
     <div>
       <svg
-        id="svgcontainer"
+        // id="svgcontainer"
+        id="one"
         width={props.width}
         height={props.height}
-        style={{
-          backgroundColor: "pink",
-          border: "2px solid gold",
-        }}
+        // style={{
+        //   backgroundColor: "pink",
+        //   border: "2px solid gold",
+        // }}
       >
-        <g fill="deeppink" stroke="indigo" strokeWidth="3">
-          <rect x="20" y="20" width="50" height="50"></rect>
-          <rect x="80" y="20" width="50" height="50"></rect>
-          <rect x="140" y="20" width="50" height="50"></rect>
-          <rect x="200" y="20" width="50" height="50"></rect>
-        </g>
+        <circle cx="40" cy="50" r="40"></circle>
+        <circle cx="130" cy="50" r="40"></circle>
+        <circle cx="220" cy="50" r="40"></circle>
+        <circle cx="310" cy="50" r="40"></circle>
+      </svg>
+
+      <br />
+      <br />
+      <svg
+        // id="svgcontainer"
+        className="oink"
+        id="two"
+        width={props.width}
+        height={props.height}
+        // style={{
+        //   backgroundColor: "pink",
+        //   border: "2px solid gold",
+        // }}
+      >
+        <circle cx="40" cy="50" r="40"></circle>
+        <circle cx="130" cy="50" r="40"></circle>
+        <circle cx="220" cy="50" r="40"></circle>
+        <circle cx="310" cy="50" r="40"></circle>
       </svg>
     </div>
   );
