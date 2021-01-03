@@ -3,27 +3,20 @@ import React from "react";
 
 const chart = (props) => {
   const graphicData = () => {
-    const circleArray = [];
-    for (let i = 1; i <= props.chartData; i++) {
-      circleArray.push(
-        <circle
-          key={"circ_" + i}
-          cx={i * 70}
-          cy="50"
-          r="30"
-          onClick={() => console.log("clicked.")}
-        />
-      );
+    const dataArray = [];
+    for (let i = 1; i <= props.chartData.length; i++) {
+      dataArray.push(<p>Blah</p>);
     }
-    return circleArray;
+    return dataArray;
   };
 
   const chartOut = (
-    <div id="svgcontainer">
-      <svg id="theSVG" width={props.width} height={props.height}>
-        {graphicData()}
-      </svg>
-    </div>
+    // <div id="svgcontainer">
+    //   <svg id="theSVG" width={props.width} height={props.height}>
+    //     {graphicData()}
+    //   </svg>
+    // </div>
+    <div id="container-inner">{graphicData()}</div>
   );
 
   return chartOut;

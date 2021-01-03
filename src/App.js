@@ -11,17 +11,21 @@ class App extends Component {
     chartData: [20, 25, 30, 35, 40],
   };
 
-  componentDidMount() {
-    const svg = d3.select("#theSVG");
-    svg.style("border", "2px solid blue");
-  }
+  componentDidMount = () => {
+    // const svg = d3.select("#theSVG");
+    // svg.style("border", "2px solid blue");
+
+    d3.selectAll("p")
+      .data(this.state.chartData)
+      .text((d) => d);
+  };
 
   changeStuff = () => {};
 
   render() {
     return (
-      <div className="mainPage">
-        <h1>MAIN PAGE</h1>
+      <div className="container-outer">
+        <h1>App</h1>
         <Chart
           height={this.state.chartHeight}
           width={this.state.chartWidth}
