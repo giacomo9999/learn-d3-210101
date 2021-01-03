@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import RowChart from "./RowChart";
 import Chart from "./Chart";
 import "./App.scss";
-// import * as d3 from "d3";
+import * as d3 from "d3";
 
 class App extends Component {
   state = {
@@ -18,8 +18,8 @@ class App extends Component {
   };
 
   componentDidMount = () => {
-    // const svg = d3.select("#theSVG");
-    // svg.style("border", "2px solid blue");
+    const svg = d3.select("#theSVG");
+    svg.style("border", "2px solid blue");
 
     // d3.selectAll("p")
     //   .data(this.state.chartData)
