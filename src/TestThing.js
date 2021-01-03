@@ -1,42 +1,19 @@
 import React from "react";
-import * as d3 from "d3";
+// import * as d3 from "d3";
 
 const testThing = (props) => {
+  const arrayOfCircles = () => {
+    const circleArray = [];
+    for (let i = 1; i <= props.numOfCircles; i++) {
+      circleArray.push(<circle key={"circ_" + i} cx={i * 70} cy="50" r="30" />);
+    }
+    return circleArray;
+  };
+
   const testBox = (
     <div>
-      <svg
-        // id="svgcontainer"
-        id="one"
-        width={props.width}
-        height={props.height}
-        // style={{
-        //   backgroundColor: "pink",
-        //   border: "2px solid gold",
-        // }}
-      >
-        <circle cx="40" cy="50" r="40"></circle>
-        <circle cx="130" cy="50" r="40"></circle>
-        <circle cx="220" cy="50" r="40"></circle>
-        <circle cx="310" cy="50" r="40"></circle>
-      </svg>
-
-      <br />
-      <br />
-      <svg
-        // id="svgcontainer"
-        className="oink"
-        id="two"
-        width={props.width}
-        height={props.height}
-        // style={{
-        //   backgroundColor: "pink",
-        //   border: "2px solid gold",
-        // }}
-      >
-        <circle cx="40" cy="50" r="40"></circle>
-        <circle cx="130" cy="50" r="40"></circle>
-        <circle cx="220" cy="50" r="40"></circle>
-        <circle cx="310" cy="50" r="40"></circle>
+      <svg id="canvas" width={props.width} height={props.height}>
+        {arrayOfCircles()}
       </svg>
     </div>
   );
