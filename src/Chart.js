@@ -1,10 +1,10 @@
 import React from "react";
 // import * as d3 from "d3";
 
-const testThing = (props) => {
-  const arrayOfCircles = () => {
+const chart = (props) => {
+  const graphicData = () => {
     const circleArray = [];
-    for (let i = 1; i <= props.numOfCircles; i++) {
+    for (let i = 1; i <= props.chartData; i++) {
       circleArray.push(
         <circle
           key={"circ_" + i}
@@ -18,16 +18,15 @@ const testThing = (props) => {
     return circleArray;
   };
 
-  const testBox = (
+  const chartOut = (
     <div id="svgcontainer">
-      <svg id="thaNotoriousSVG" width={props.width} height={props.height}>
-        {/* <svg viewBox={`0 0 ${props.width} ${props.height}`}> */}
-        {arrayOfCircles()}
+      <svg id="theSVG" width={props.width} height={props.height}>
+        {graphicData()}
       </svg>
     </div>
   );
 
-  return testBox;
+  return chartOut;
 };
 
-export default testThing;
+export default chart;
