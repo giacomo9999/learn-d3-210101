@@ -17,7 +17,9 @@ class App extends Component {
 
     d3.selectAll("p")
       .data(this.state.chartData)
-      .text((d) => d);
+      .text((d) => d)
+      .style("font-size", (d) => d + "px")
+      .classed("changeColor", (d) => d > 30);
   };
 
   changeStuff = () => {};
