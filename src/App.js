@@ -7,21 +7,15 @@ import * as d3 from "d3";
 
 class App extends Component {
   componentDidMount() {
-    d3.select("#canvas")
-      .append("rect")
-      .attr("x", 0)
-      .attr("y", 0)
-      .attr("width", 25)
-      .attr("height", 25)
-      .attr("fill", "green");
+    d3.select("circle").attr("fill", "deeppink");
+    d3.select("#svgcontainer").style("fill", "pink");
   }
 
   render() {
     return (
       <div className="mainPage">
         <h1>MAIN PAGE</h1>
-        <TestThing height={600} width={600} numOfCircles={4}/>
-        
+        <TestThing height={600} width={600} numOfCircles={4} />
       </div>
     );
   }

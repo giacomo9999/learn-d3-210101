@@ -11,8 +11,9 @@ const testThing = (props) => {
   };
 
   const testBox = (
-    <div>
-      <svg id="canvas" width={props.width} height={props.height}>
+    <div id="svgcontainer">
+      <svg width={props.width} height={props.height}>
+      {/* <svg viewBox={`0 0 ${props.width} ${props.height}`}> */}
         {arrayOfCircles()}
       </svg>
     </div>
