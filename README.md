@@ -6,7 +6,7 @@ If necssary to remove 5.0: npm uninstall node-sass
 Then: npm install node-sass@4.14.1
 
 Useful:\
-https://wattenberger.com/blog/react-and-d3\
-https://blog.logrocket.com/data-visualization-in-react-using-react-d3-c35835af16d0\
-https://d3js.org/\
-https://riptutorial.com/d3-js/example/17339/correctly-appending-an-svg-element\
+https://wattenberger.com/blog/react-and-d3  
+https://blog.logrocket.com/data-visualization-in-react-using-react-d3-c35835af16d0  
+https://d3js.org/  
+https://riptutorial.com/d3-js/example/17339/correctly-appending-an-svg-element  
